@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container"> 
+            <div class="row"> 
+                <h1> All Available Rooms </h1>
+            </div> 
+            
+            <table class="table table-striped table-bordered" >
+                   <thead class="table-dark">
+               <tr>
+                   <th> Room no </th>
+                   <th> Type </th>
+                   <th> Price </th>
+                   <th> Capacity </th>
+                   <th> Desciption </th>
+                   <th> Status </th>
+                   <th> Action </th>
+               </tr>
+                  </thead>
+                  <tbody>
+                      <tr th:each="rooms: ${room_info}">  
+                          
+                          <td th:text="${rooms.room_no}"></td>                    
+                          <td th:text="${rooms.room_type}"></td>
+                          <td th:text="${rooms.room_price}"></td>
+                          <td th:text="${rooms.room_capacity}"></td>
+                          <td th:text="${rooms.desciption}"></td>
+                          <td th:text="${rooms.status}"></td>
+                          <td> <a th:href="@{/book_rooms/{room_no}(room_no=${rooms.room_no})}"
+                                  class="btn btn-primary"> Book </a>
+                          
+                      </tr>
+                  </tbody> 
+    </body>
+</html>

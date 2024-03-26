@@ -1,0 +1,4 @@
+insert into room_info values(101,'5 Star Room',2,10000,'Non-AC','Available');
+insert into room_info values(102,'Big Room',4,5000,'Non-AC','Available');
+insert into room_info values(103,'Small Room',2,2500,'AC','Available');
+insert into room_info values(104,'Super Room',2,10000,'AC','Available');
